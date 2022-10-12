@@ -1,0 +1,251 @@
+add_newline = true
+
+# format = """
+# [┌───────────────────](bold green)
+# [│](bold green)$directory$rust$package
+# [└─>](bold green) """
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$vcsh\
+$git_status\
+$git_branch\
+$git_commit\
+$git_state\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$kubernetes\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character"""
+
+[battery]
+# charging_symbol = "⚡️"
+# discharging_symbol = "💀"
+# full_symbol = "🔋"
+# format = '[$symbol]($style)\[[$percentage]($style)\] '
+format = '[$symbol]($style)[$percentage]($style) '
+full_symbol = " "
+
+[[battery.display]]
+charging_symbol = " "
+discharging_symbol = " "
+style = "bold red"
+threshold = 10
+
+[[battery.display]]
+charging_symbol = " "
+discharging_symbol = " "
+style = "bold yellow"
+threshold = 60
+
+[[battery.display]]
+charging_symbol = " "
+discharging_symbol = " "
+style = "bold green"
+threshold = 100
+
+[character]
+error_symbol = "[✗](bold red)"
+# success_symbol = "[➜](bold green)"
+# use_symbol_for_status = true
+
+[cmd_duration]
+# format = '祥\[[$duration]($style)\] '
+format = '祥[$duration]($style) '
+min_time = 0
+show_milliseconds = true
+# prefix = "tooks "
+
+[directory]
+disabled = false
+fish_style_pwd_dir_length = 1
+# format = ' \[[$path]($style)[$read_only]($read_only_style)\] '
+format = '  [$path]($style)[$read_only]($read_only_style) '
+home_symbol = "🏡"
+style = "bold cyan"
+truncate_to_repo = true
+truncation_length = 3
+truncation_symbol = "/"
+
+# [env_var]
+# variable = "SHELL"
+# default = "Zsh"
+# prefix = "<"
+# suffix = ">"
+
+[git_branch]
+# always_show_remote = true
+# disabled = false
+# format = '$symbol\[[$branch]($style)\] '
+format = '$symbol[$branch]($style) '
+# style = "bold purple"
+# symbol = "🌱"
+symbol = " "
+# truncation_length = 8
+# truncation_symbol = "..."
+
+[git_state]
+am = "AM"
+am_or_rebase = "AM/REBASE"
+bisect = "BISECTING"
+cherry_pick = "CHERRY PICKING"
+disabled = false
+merge = "MERGING"
+rebase = "REBASING"
+revert = "REVERTING"
+style = "bold yellow"
+
+[git_status]
+format = ' [$all_status$ahead_behind]($style) '
+modified = " "
+# modified = "*"
+conflicted = " "
+diverged = " "
+staged = " "
+style = "bold purple"
+# style = "bold red"
+untracked = " "
+# conflicted = "🏳"
+# ahead = "🏎💨"
+# behind = "😰"
+# diverged = "😵"
+# untracked = "🤷‍"
+# stashed = "📦"
+# modified = "📝"
+# staged.value = "++"
+# staged.style = "green"
+# staged_count.enabled = true
+# staged_count.style = "green"
+# renamed = "👅"
+# deleted = "🗑"
+
+# [[git_status.count]]
+# enabled = true
+
+# [hostname]
+# prefix = "🤖"
+# ssh_only = false
+# # suffix = "⟫"
+# disabled = false
+# trim_at = "."
+
+# [jobs]
+# symbol = "+ "
+# threshold = 1
+
+[gcloud]
+disabled = false
+# format = '$symbol\[[$account(@$domain)  $region  $project  $active]($style)\] '
+# format = '$symbol\[[$active]($style)\] '
+format = '$symbol[$active]($style) '
+symbol = " "
+
+[kubernetes]
+disabled = false
+# format = 'on [⛵ $context \($namespace\)](dimmed green) '
+# format = '$symbol\[[$context( \($namespace\))]($style)\] '
+format = '$symbol[$context( \($namespace\))]($style) '
+style = "cyan"
+symbol = "ﴱ "
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+
+[line_break]
+disabled = false
+
+# [memory_usage]
+# disabled = false
+# show_percentage = true
+# show_swap = false
+# threshold = -1
+# symbol = " "
+# separator = "/"
+# style = "bold dimmed white"
+
+[nodejs]
+# format = '$symbol\[[v$version]($style)\] '
+format = '$symbol[v$version]($style) '
+version_format = "${raw}"
+# disabled = false
+# style = "bold green"
+# symbol = "⬢ "
+symbol = " "
+
+[package]
+disabled = false
+# format = '$symbol\[[$version]($style)\] '
+format = '$symbol[$version]($style) '
+style = "bold red"
+symbol = " "
+
+[python]
+disabled = false
+pyenv_prefix = "pyenv"
+pyenv_version_name = false
+style = "bold yellow"
+symbol = "🐍 "
+
+[terraform]
+# format = '$symbol\[[$workspace]($style)\] '
+format = '$symbol[$workspace]($style) '
+symbol = "💠"
+
+[time]
+disabled = false
+# format = "🕙 [$time]($style)"
+# format = '🕙\[[$time]($style)\] '
+format = '🕙[$time]($style) '
+
+# [username]
+# disabled = false
+# show_always = false
+# style_root = "bold red"
+# style_user = "bold yellow"
