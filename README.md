@@ -81,3 +81,30 @@ omz reload
 exec zsh
 ```
 
+## Starship 🚀
+
+- Install [Nerd fonts](https://www.nerdfonts.com/)
+- Install [Starship](https://starship.rs/#install-latest-version)
+
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
+
+Copy or link [`HOME/.config/starship.toml`](HOME/.config/starship.toml) to `~/.config/starship.toml`
+
+```bash
+# Create .config dir if it doesn't exist
+mkdir -p ~/.config
+
+# Backup current zshrc, just in case
+mv ~/.config/starship.toml ~/.config/starship.toml.bak
+
+# Copy
+cp ./HOME/.config/starship.toml ~/.config/starship.toml
+
+# Or link
+ln -s "$(pwd)/HOME/.config/starship.toml" ~/.config/starship.toml
+
+# Reload zsh
+exec zsh
+```
