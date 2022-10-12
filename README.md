@@ -18,3 +18,30 @@ chsh -s $(which zsh)
 
 Reload / open new terminal or log off and back on. Verify the shell is zsh: `echo $SHELL`
 
+## oh-my-zsh
+Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/wiki)
+
+```bash
+# curl
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# wget (alternative)
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Copy or link [`HOME/.zshrc`](HOME/.zshrc) to `~/.zshrc`
+
+```bash
+# Backup current zshrc, just in case
+mv ~/.zshrc ~/.zshrc.bak
+
+# Copy
+cp ./HOME/.zshrc ~/.zshrc
+
+# Or link
+ln -s "$(pwd)/HOME/.zshrc" ~/.zshrc
+
+# Reload zsh
+exec zsh
+```
+
