@@ -45,3 +45,39 @@ ln -s "$(pwd)/HOME/.zshrc" ~/.zshrc
 exec zsh
 ```
 
+Install custom `oh-my-zsh` plugins:
+
+### zsh-autosuggestions
+
+Install [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+### history-substring-search
+
+Install [history-substring-search](https://github.com/zsh-users/zsh-history-substring-search#install)
+
+```bash
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+```
+
+### zsh-syntax-highlighting
+
+Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+Reload zsh/omz after installing plugins for changes to take effect:
+
+```bash
+# Reload zsh/omz
+omz reload
+
+# Or
+exec zsh
+```
+
