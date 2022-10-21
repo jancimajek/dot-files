@@ -20,6 +20,9 @@ My dot-files, configs, rc files, etc..
 Install [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and make it default shell
 
 ```bash
+# Install / update on Ubuntu
+sudo apt install zsh
+
 # Check that zsh is installed
 zsh --version
 
