@@ -14,6 +14,8 @@ My dot-files, configs, rc files, etc..
 - [ ] [oh-my-zsh](#oh-my-zsh)
 - [ ] [Starship](#starship-🚀)
 
+## scoop (Windows)
+
 
 ## ZSH
 
@@ -178,6 +180,12 @@ git config --global user.email "your@email.com"
 # Verify username and email are set 
 git config --global user.name
 git config --global user.email
+```
+
+On Windows only, you should set [`#core.autocrlf`](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) to `true` (on Mac & Linux this is should stay configured as `input`)
+```bash
+# Windows ONLY - handle CRLF conversion correctly
+git config --global core.autocrlf true
 ```
 
 
