@@ -16,6 +16,15 @@ My dot-files, configs, rc files, etc..
 
 ## scoop (Windows)
 
+Install [scoop package manager for Windows](https://scoop.sh/)
+
+```bash
+# Optional: Needed to run a remote script the first time
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Install scoop
+iwr -useb get.scoop.sh | iex
+```
 
 ## ZSH
 
