@@ -140,3 +140,44 @@ ssh-add -K ~/.ssh/id_ed25519
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
 
+## Git
+
+Download and install [latest version of Git](https://git-scm.com/downloads)
+
+```bash
+# Copy git config & aliases
+cp ./HOME/.gitconfig ~/.gitconfig
+
+# Set username and email
+git config --global user.name "YOUR NAME"
+git config --global user.email "your@email.com"
+
+# Verify username and email are set 
+git config --global user.name
+git config --global user.email
+```
+
+
+## GitHub
+
+Install [GH CLI](https://cli.github.com/) and [login into GitHub](https://cli.github.com/manual/gh_auth_login)
+
+```bash
+# Mac insall using Brew
+brew install gh 
+
+# Authenticate with GitHub
+gh auth login
+```
+
+If you haven't uploaded your SSH key to GitHub during the auth/login process, manually [add your SSH key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) using the web or `gh` CLI command:
+
+```bash
+# Add SSH key to GitHub (provide decriptive label)
+gh ssh-key add ~/.ssh/id_ed25519.pub --title "your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION"
+```
+
+```bash
+# Test ssh is working
+ssh -T git@github.com
+```
