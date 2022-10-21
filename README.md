@@ -158,6 +158,9 @@ ssh-add -K ~/.ssh/id_ed25519
 
 # Post OSX Monterey 12.0
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+# Ubuntu
+ssh-add ~/.ssh/id_ed25519
 ```
 
 ## Git
