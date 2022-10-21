@@ -185,10 +185,27 @@ git config --global user.email
 
 Install [GH CLI](https://cli.github.com/) and [login into GitHub](https://cli.github.com/manual/gh_auth_login)
 
+- [Linux installation guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
+
+
 ```bash
-# Mac insall using Brew
+# Mac install using Brew
 brew install gh 
 
+# Ubuntu - pre-install
+type -p curl >/dev/null || sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+
+# Ubuntu - install & update
+sudo apt update
+sudo apt install gh
+```
+
+Authenticate with GitHub & upload SSH key
+
+```bash
 # Authenticate with GitHub
 gh auth login
 ```
