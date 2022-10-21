@@ -44,6 +44,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # wget (alternative)
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Update
+omz update
 ```
 
 Copy or link [`HOME/.zshrc`](HOME/.zshrc) to `~/.zshrc`
