@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-source <(stern --completion=zsh)
+stern --version > /dev/null 2>&1 && source <(stern --completion=zsh)
 
 eval "$(starship init zsh)"
 
