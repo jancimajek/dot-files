@@ -256,3 +256,51 @@ Add the GPG public key to [GitHub GPG keys](https://github.com/settings/ssh/new)
 - ⚠ Key type **MUST BE SET TO** `Signing Key` ⚠
 
 
+
+### Signing using GPG key
+
+> *Note: See [SSH signing section](#signing-using-ssh-key) for signing commits using SSH keys (currently not yet supported by VSCode).*
+
+#### Generate GPG key
+
+[Generate a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and  [configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) to use the GPG to sign git commits
+
+```bash
+# Generate a new GPG key (RSA 4096)
+gpg --full-generate-key
+```
+
+#### Configure Git
+
+```bash
+# (Un)set GPG format
+git config --global --unset gpg.format
+
+# List available GPG keys to get GPG key ID (see below)
+gpg --list-secret-keys --keyid-format=long
+
+# Grab GPG key ID from the output, e.g.:
+# sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+#             ^^^^^^^^^^^^^^^^
+# ID in this case would be GPG_KEY_ID=3AA5C34371567BD2
+
+git config --global user.signingkey 'GPG_KEY_ID'
+```
+
+#### Configure GitHub
+
+In order for GitHub to be able to verify commits, [add GPG public key to GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).
+
+```bash
+# Print the GPG key ID, in ASCII armor format
+gpg --armor --export GPG_KEY_ID
+```
+
+Copy your GPG public key, beginning with `-----BEGIN PGP PUBLIC KEY BLOCK-----` and ending with `-----END PGP PUBLIC KEY BLOCK-----`.
+
+Add the GPG public key to [GitHub GPG keys](https://github.com/settings/gpg/new). Use title `your@email.com GPG-RSA-4096 Device YYYY-MM-DD OPT_DESCRIPTION`
+
+
+### Test git signing
+
+To test that git signing works, add a git commit and push it to GitHub. You should be able to see the `Verified` mark on GitHub
