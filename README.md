@@ -1,6 +1,20 @@
 # dot-files
 My dot-files, configs, rc files, etc..
 
+## TODO
+
+- [ ] [SSH](#ssh)
+  - [ ] [Generate a new SSH key](#generate-a-new-ssh-key)
+- [ ] [Git](#git) (set user name & email)
+- [ ] [GitHub CLI](#github-cli)
+- [ ] Clone this repo `git clone git@github.com:jancimajek/dot-files.git`
+- [ ] [Git](#git) (everything again)
+- [ ] [Signing git commits](#signing-git-commits)
+- [ ] [ZSH](#zsh)
+- [ ] [oh-my-zsh](#oh-my-zsh)
+- [ ] [Starship](#starship-🚀)
+
+
 ## ZSH
 
 Install [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and make it default shell
