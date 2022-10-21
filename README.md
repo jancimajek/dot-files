@@ -158,7 +158,7 @@ git config --global user.email
 ```
 
 
-## GitHub
+## GitHub CLI
 
 Install [GH CLI](https://cli.github.com/) and [login into GitHub](https://cli.github.com/manual/gh_auth_login)
 
@@ -181,3 +181,21 @@ gh ssh-key add ~/.ssh/id_ed25519.pub --title "your@email.com ED25519 Device YYYY
 # Test ssh is working
 ssh -T git@github.com
 ```
+
+
+### Signing git commits
+
+[Configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) to the SSH key from previous step to sign git commits
+
+```bash
+# Set signing format to ssh
+git config --global gpg.format ssh
+
+# Copy SSH public key (alternagtively, open in editor and copy content of the file manually)
+pbcopy < ~/.ssh/id_ed25519.pub
+
+# Set git signing key - enclose in single quotes and include all spaces
+git config --global user.signingkey 'COPIED_FROM_CLIPBOARD'
+```
+
+Alternatively, follow steps in the GitHub manual linked above to setup GPG signing.
