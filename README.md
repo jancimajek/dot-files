@@ -108,3 +108,35 @@ ln -s "$(pwd)/HOME/.config/starship.toml" ~/.config/starship.toml
 # Reload zsh
 exec zsh
 ```
+
+## SSH
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+cp ./HOME/.ssh/config ~/.ssh/config
+chmod 600 ~/.ssh/config
+```
+
+Replace `Firstname.Lastname` in the [`~/.ssh/config`](~/.ssh/config) file with real name.
+
+
+### Generate a new SSH key
+
+Generate a [new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+```bash
+# Generate a new key:
+ssh-keygen -t ed25519 -C "your@email.com ED25519 Device YYYY-MM-DD"
+
+# Check ssh agent is running
+eval "$(ssh-agent -s)"
+
+# Pre OSX Monterey 12.0
+ssh-add -K ~/.ssh/id_ed25519
+
+# Post OSX Monterey 12.0
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
