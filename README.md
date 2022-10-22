@@ -280,36 +280,6 @@ ssh -T git@github.com
 
 Sign git commits and get [`Verified`](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) mark on GitHub
 
-### Signing using SSH key
-
-> *Note: This is fairly new, available since [`git v2.34`](https://github.blog/2021-11-15-highlights-from-git-2-34/#tidbits) and [GitHub](https://github.blog/changelog/2022-08-23-ssh-commit-verification-now-supported/) since Aug 2022. However, VSCode does not support this yet, so it only works with CLI commits. Use [GPG signing](#signing-using-gpg-key) until it is supported.*
-
-#### Configure Git
-
-[Configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) to use the SSH key from previous step to sign git commits
-
-```bash
-# Set signing format to ssh
-git config --global gpg.format ssh
-
-# Copy SSH public key (alternagtively, open in editor and copy content of the file manually)
-pbcopy < ~/.ssh/id_ed25519.pub
-
-# Set git signing key - enclose in single quotes and include all spaces
-git config --global user.signingkey 'COPIED_FROM_CLIPBOARD'
-```
-
-#### Configure GitHub
-
-In order for GitHub to be able to verify commits, you need to [add SSH public key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-
-Add the GPG public key to [GitHub GPG keys](https://github.com/settings/ssh/new): 
-
-- Use title `your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION (SIGNING KEY)` and 
-- ⚠ Key type **MUST BE SET TO** `Signing Key` ⚠
-
-
-
 ### Signing using GPG key
 
 > *Note: See [SSH signing section](#signing-using-ssh-key) for signing commits using SSH keys (currently not yet supported by VSCode).*
@@ -357,6 +327,35 @@ Add the GPG public key to [GitHub GPG keys](https://github.com/settings/gpg/new)
 ### Test git signing
 
 To test that git signing works, add a git commit and push it to GitHub. You should be able to see the `Verified` mark on GitHub
+
+
+### Signing using SSH key
+
+> *Note: This is fairly new, available since [`git v2.34`](https://github.blog/2021-11-15-highlights-from-git-2-34/#tidbits) and [GitHub](https://github.blog/changelog/2022-08-23-ssh-commit-verification-now-supported/) since Aug 2022. However, VSCode does not support this yet, so it only works with CLI commits. Use [GPG signing](#signing-using-gpg-key) until it is supported.*
+
+#### Configure Git
+
+[Configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) to use the SSH key from previous step to sign git commits
+
+```bash
+# Set signing format to ssh
+git config --global gpg.format ssh
+
+# Copy SSH public key (alternagtively, open in editor and copy content of the file manually)
+pbcopy < ~/.ssh/id_ed25519.pub
+
+# Set git signing key - enclose in single quotes and include all spaces
+git config --global user.signingkey 'COPIED_FROM_CLIPBOARD'
+```
+
+#### Configure GitHub
+
+In order for GitHub to be able to verify commits, you need to [add SSH public key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+Add the GPG public key to [GitHub GPG keys](https://github.com/settings/ssh/new): 
+
+- Use title `your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION (SIGNING KEY)` and 
+- ⚠ Key type **MUST BE SET TO** `Signing Key` ⚠
 
 
 ## Scoop (Windows)
