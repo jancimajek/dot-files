@@ -14,18 +14,6 @@ My dot-files, configs, rc files, etc..
 - [ ] [oh-my-zsh](#oh-my-zsh)
 - [ ] [Starship](#starship-🚀)
 
-## scoop (Windows)
-
-Install [scoop package manager for Windows](https://scoop.sh/)
-
-```bash
-# Optional: Needed to run a remote script the first time
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-# Install scoop
-iwr -useb get.scoop.sh | iex
-```
-
 ## ZSH
 
 Install [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and make it default shell
@@ -369,3 +357,20 @@ Add the GPG public key to [GitHub GPG keys](https://github.com/settings/gpg/new)
 ### Test git signing
 
 To test that git signing works, add a git commit and push it to GitHub. You should be able to see the `Verified` mark on GitHub
+
+
+## Scoop (Windows)
+
+> *Just don't bother, you'll waste just time and effort, age 5 years and it won't work at the end anyway. Use MSI installers where possible instead *
+
+
+Install [scoop package manager for Windows](https://scoop.sh/)
+
+```bash
+# Optional: Needed to run a remote script the first time
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Install scoop
+iwr -useb get.scoop.sh | iex
+```
+
