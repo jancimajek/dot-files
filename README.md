@@ -261,7 +261,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 # Ubuntu - install & update
 sudo apt update
 sudo apt install gh
+
+# Windows (this is flimsy, better install directly via MSI installer)
+# scoop install gh
 ```
+
+On Windows, it's better to [download and run the MSI installer](https://github.com/cli/cli/releases/latest) directly
 
 Authenticate with GitHub & upload SSH key
 
