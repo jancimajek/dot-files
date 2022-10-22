@@ -117,7 +117,10 @@ exec zsh
 - Install [Nerd fonts](https://www.nerdfonts.com/)
 - Install [Starship](https://starship.rs/#install-latest-version)
 
+
+### Zsh (Mac & Linux)
 ```bash
+# Install Starship
 curl -sS https://starship.rs/install.sh | sh
 ```
 
@@ -127,18 +130,58 @@ Copy or link [`HOME/.config/starship.toml`](HOME/.config/starship.toml) to `~/.c
 # Create .config dir if it doesn't exist
 mkdir -p ~/.config
 
-# Backup current zshrc, just in case
+# Backup current Starship config, just in case
 mv ~/.config/starship.toml ~/.config/starship.toml.bak
 
-# Copy
+# Copy Starship config
 cp ./HOME/.config/starship.toml ~/.config/starship.toml
 
-# Or link
+# Or link it
 ln -s "$(pwd)/HOME/.config/starship.toml" ~/.config/starship.toml
 
 # Reload zsh
 exec zsh
 ```
+
+### Powershell (Windows)
+
+> *This may or may not work - probably won't 🤷‍♂️*
+
+
+Best way is to [download and install via the MSI Installer](https://github.com/starship/starship/releases/latest)
+
+```bash
+# Install Starship (this may not work, use MSI Installer instead -- see above)
+# scoop install starship
+```
+
+> *You will probably need to restart all terminals, Powershells and the entire VSCode for changes to take effect.*
+
+Add the following at the end of `$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` so that Starship starts automatically when Powershell is launched
+
+```bash
+Invoke-Expression (&starship init powershell)
+```
+
+Copy [`HOME/.config/starship.toml`](HOME/.config/starship.toml) to `$HOME\.config\starship.toml`
+
+```bash
+# Create .config dir if it doesn't exist
+New-Item -ItemType Directory -Force $HOME\.config 
+# or: mkdir -p ~/.config
+
+# Backup current Starship config, just in case
+Move-Item $HOME\.config\starship.toml $HOME\.config\starship.toml.bak 
+# or: mv ~/.config/starship.toml ~/.config/starship.toml.bak
+
+# Copy Starship config
+Copy-Item .\HOME\.config\starship.toml $HOME\.config\starship.toml
+# or: cp ./HOME/.config/starship.toml ~/.config/starship.toml
+
+# Reload Powershell
+. $profile
+```
+
 
 ## SSH
 
