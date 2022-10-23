@@ -1,6 +1,9 @@
 
 - [Git](#git)
 - [GitHub CLI](#github-cli)
+  - [Install `gh`](#install-gh)
+  - [Authenticate with GitHub & upload SSH key](#authenticate-with-github--upload-ssh-key)
+  - [Test SSH to GitHub](#test-ssh-to-github)
 - [Signing git commits](#signing-git-commits)
   - [GPG signing](#gpg-signing)
     - [Installation](#installation)
@@ -40,6 +43,8 @@ git config --global core.autocrlf true
 
 # GitHub CLI
 
+## Install `gh`
+
 Install [GH CLI](https://cli.github.com/) and [login into GitHub](https://cli.github.com/manual/gh_auth_login)
 
 - [Linux installation guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
@@ -65,7 +70,8 @@ sudo apt install gh
 
 On Windows, it's better to [download and run the MSI installer](https://github.com/cli/cli/releases/latest) directly
 
-Authenticate with GitHub & upload SSH key
+
+## Authenticate with GitHub & upload SSH key
 
 ```bash
 # Authenticate with GitHub
@@ -79,6 +85,7 @@ If you haven't uploaded your SSH key to GitHub during the auth/login process, ma
 gh ssh-key add ~/.ssh/id_ed25519.pub --title "your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION"
 ```
 
+## Test SSH to GitHub
 ```bash
 # Test ssh is working
 ssh -T git@github.com
