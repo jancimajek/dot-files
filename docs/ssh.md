@@ -79,3 +79,5 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 # Ubuntu & Windows
 ssh-add ~/.ssh/id_ed25519
 ```
+
+> *Next, continue to [`git`, GitHub and GPG Signing setup guide](./git.md)*
