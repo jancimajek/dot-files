@@ -3,8 +3,9 @@ My dot-files, configs, rc files, etc; as well as detailed documentation how to q
 
 ## Documentation guides
 
-- [SSH, git, GitHub, GPG](docs/git.md)
-- [zsh, oh-my-zsh, Starship 🚀](docs/zsh.md)
+- [Ssh, ssh-agent](docs/ssh.md)
+- [Git, GitHub, GPG commits signing](docs/git.md)
+- [Zsh, oh-my-zsh, Starship 🚀](docs/zsh.md)
 - [Windows, Powershell, scoop](docs/windows.md)
 
 ## Setup TODO
@@ -16,7 +17,6 @@ My dot-files, configs, rc files, etc; as well as detailed documentation how to q
 - [ ] [git](docs/git.md#git)
 - [ ] [GitHub CLI](docs/git.md#github-cli)
 - [ ] Clone this repo (optional)
-
   ```bash
   git clone git@github.com:jancimajek/dot-files.git
   ```
