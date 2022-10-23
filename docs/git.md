@@ -125,7 +125,7 @@ On Windows, you can [configure `Task Scheduler` to start GPG Agent](https://stac
 
 ### Configure GPG Agent
 
-Copy [`HOME/.gnupg/gpg-agent.conf`](./HOME/.gnupg/gpg-agent.conf) for to `~/.gnupg/gpg-agent.conf`
+Copy [`HOME/.gnupg/gpg-agent.conf`](../HOME/.gnupg/gpg-agent.conf) for to `~/.gnupg/gpg-agent.conf`
 
 ```bash
 # Create .gnupg dir if it doesn't exist

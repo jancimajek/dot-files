@@ -29,7 +29,7 @@ Add the following at the end of `$HOME\Documents\WindowsPowerShell\Microsoft.Pow
 Invoke-Expression (&starship init powershell)
 ```
 
-Copy [`HOME/.config/starship.toml`](HOME/.config/starship.toml) to `$HOME\.config\starship.toml`
+Copy [`HOME/.config/starship.toml`](../HOME/.config/starship.toml) to `$HOME\.config\starship.toml`
 
 ```bash
 # Create .config dir if it doesn't exist

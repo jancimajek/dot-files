@@ -43,7 +43,7 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 omz update
 ```
 
-Copy or link [`HOME/.zshrc`](HOME/.zshrc) to `~/.zshrc`
+Copy or link [`HOME/.zshrc`](../HOME/.zshrc) to `~/.zshrc`
 
 ```bash
 # Backup current zshrc, just in case
@@ -114,7 +114,7 @@ exec zsh
 curl -sS https://starship.rs/install.sh | sh
 ```
 
-Copy or link [`HOME/.config/starship.toml`](HOME/.config/starship.toml) to `~/.config/starship.toml`
+Copy or link [`HOME/.config/starship.toml`](../HOME/.config/starship.toml) to `~/.config/starship.toml`
 
 ```bash
 # Create .config dir if it doesn't exist
