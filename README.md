@@ -284,6 +284,44 @@ Sign git commits and get [`Verified`](https://docs.github.com/en/authentication/
 
 > *Note: See [SSH signing section](#signing-using-ssh-key) for signing commits using SSH keys (currently not yet supported by VSCode).*
 
+#### Installation
+
+```bash
+# Check if gpg is installed
+gpg --version
+# Should be version 2
+```
+
+If needed, install from [GnuPG website](https://www.gnupg.org/download/). For Windows, download and install [Gpg4win](https://gpg4win.org/download.html) with Kleopatra.
+
+
+```bash
+# Check if GPG Agent is running
+gpg-agent
+# Expected output: gpg-agent[25800]: gpg-agent running and available
+
+# Start GPG Agent if it's not running
+gpgconf --launch gpg-agent
+```
+
+On Windows, you can [configure `Task Scheduler` to start GPG Agent](https://stackoverflow.com/a/51407128/192331) on login / computer start
+
+
+#### Configure GPG Agent
+
+Copy [`HOME/.gnupg/gpg-agent.conf`](./HOME/.gnupg/gpg-agent.conf) for to `~/.gnupg/gpg-agent.conf`
+
+```bash
+# Create .gnupg dir if it doesn't exist
+mkdir -p ~/.gnupg
+
+# Backup current GPG Agent config, just in case
+mv ~/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf.bak
+
+# Copy GPG Agent config
+cp ./HOME/.gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+```
+
 #### Generate GPG key
 
 [Generate a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) and  [configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) to use the GPG to sign git commits
