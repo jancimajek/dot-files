@@ -11,8 +11,8 @@ My dot-files, configs, rc files, etc; as well as detailed documentation how to q
 
 ### Basic setup (SSH, git, GitHub)
 
-- [ ] [ssh](docs/git.md#ssh)
-  - [ ] [Generate a new SSH key](docs/git.md#generate-a-new-ssh-key)
+- [ ] [Configure ssh](docs/ssh.md#ssh)
+  - [ ] [Generate a new SSH key](docs/ssh.md#generate-a-new-ssh-key)
 - [ ] [git](docs/git.md#git)
 - [ ] [GitHub CLI](docs/git.md#github-cli)
 - [ ] Clone this repo (optional)
