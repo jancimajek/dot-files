@@ -204,11 +204,12 @@ git config --global user.signingkey 'COPIED_FROM_CLIPBOARD'
 
 ### Configure GitHub
 
-In order for GitHub to be able to verify commits, you need to [add SSH public key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+In order for GitHub to be able to verify commits, you need to [add SSH public key to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) as a `Signing key`, even if you already uploaded the same SSH key as an `Authentication key`.
 
-Add the GPG public key to [GitHub GPG keys](https://github.com/settings/ssh/new): 
+> *Note: GitHub distunguishes between authenticating keys and signing keys. Note, you have to select **`Signing key`** when adding the key.*
+
+Add the SSH public key to [GitHub SSH signing keys](https://github.com/settings/ssh/new) via GitHub website (this is currently unavailable via `gh` CLI): 
 
 - Use title `your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION (SIGNING KEY)` and 
 - ⚠ Key type **MUST BE SET TO** `Signing Key` ⚠
-
 
