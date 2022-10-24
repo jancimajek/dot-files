@@ -195,7 +195,7 @@ To test that git signing works, add a git commit and push it to GitHub. You shou
 # Set signing format to ssh
 git config --global gpg.format ssh
 
-# Copy SSH public key (alternagtively, open in editor and copy content of the file manually)
+# Copy SSH public key (alternatively, open in editor and copy content of the file manually)
 pbcopy < ~/.ssh/id_ed25519.pub
 
 # Set git signing key - enclose in single quotes and include all spaces
