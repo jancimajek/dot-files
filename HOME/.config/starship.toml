@@ -1,3 +1,7 @@
+## Icons: https://www.nerdfonts.com/cheat-sheet
+## Styles: https://starship.rs/advanced-config/#style-strings
+## Colours: https://i.sstatic.net/KTSQa.png
+
 add_newline = true
 
 # format = """
@@ -72,23 +76,71 @@ $character"""
 # full_symbol = "🔋"
 # format = '[$symbol]($style)\[[$percentage]($style)\] '
 format = '[$symbol]($style)[$percentage]($style) '
-full_symbol = " "
+full_symbol = "󰂅 "
 
 [[battery.display]]
-charging_symbol = " "
-discharging_symbol = " "
+charging_symbol = "󰢟 "
+discharging_symbol = "󱃍 "
 style = "bold red"
 threshold = 10
 
 [[battery.display]]
-charging_symbol = " "
-discharging_symbol = " "
-style = "bold yellow"
+charging_symbol = "󰢜 "
+discharging_symbol = "󰁺 "
+style = "bold 202"
+threshold = 20
+
+[[battery.display]]
+charging_symbol = "󰂆 "
+discharging_symbol = "󰁻 "
+style = "bold 208"
+threshold = 30
+
+[[battery.display]]
+charging_symbol = "󰂇 "
+discharging_symbol = "󰁼 "
+style = "bold 214"
+threshold = 40
+
+[[battery.display]]
+charging_symbol = "󰂈 "
+discharging_symbol = "󰁽 "
+style = "bold 220"
+threshold = 50
+
+[[battery.display]]
+charging_symbol = "󰢝 "
+discharging_symbol = "󰁾 "
+style = "bold 226"
 threshold = 60
 
 [[battery.display]]
-charging_symbol = " "
-discharging_symbol = " "
+charging_symbol = "󰂉 "
+discharging_symbol = "󰁿 "
+style = "bold 190"
+threshold = 70
+
+[[battery.display]]
+charging_symbol = "󰢞 "
+discharging_symbol = "󰂀 "
+style = "bold 154"
+threshold = 80
+
+[[battery.display]]
+charging_symbol = "󰂊 "
+discharging_symbol = "󰂁 "
+style = "bold 118"
+threshold = 90
+
+[[battery.display]]
+charging_symbol = "󰂋 "
+discharging_symbol = "󰂁 "
+style = "bold 82"
+threshold = 99
+
+[[battery.display]]
+charging_symbol = "󰂅 "
+discharging_symbol = "󰁹 "
 style = "bold green"
 threshold = 100
 
@@ -98,8 +150,8 @@ error_symbol = "[✗](bold red)"
 # use_symbol_for_status = true
 
 [cmd_duration]
-# format = '祥\[[$duration]($style)\] '
-format = '祥[$duration]($style) '
+# format = '󰔛\[[$duration]($style)\] '
+format = '󰔛 [$duration]($style) '
 min_time = 0
 show_milliseconds = true
 # prefix = "tooks "
