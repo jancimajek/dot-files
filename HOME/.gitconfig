@@ -42,5 +42,8 @@
 	autosetupmerge = true
 [core]
 	autocrlf = input
+	editor = vim
+[rerere]
+	enabled = true
 [commit]
 	gpgsign = true
