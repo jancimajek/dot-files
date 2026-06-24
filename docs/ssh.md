@@ -37,6 +37,10 @@ On Windows, find the `.ssh` folder in Explorer, right-click > `Properties` > `Se
 
 ### Update ssh config
 
+```bash
+code ~/.ssh/config
+```
+
 Replace `Firstname.Lastname` in the [`~/.ssh/config`](~/.ssh/config) file with real name:
 
 ```bash
@@ -70,20 +74,28 @@ start-ssh-agent.cmd
 
 Generate a [new ssh key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
+Generate a new key:
 ```bash
-# Generate a new key:
 ssh-keygen -t ed25519 -C "your@email.com ED25519 Device YYYY-MM-DD"
+```
 
-# Check ssh agent is running
+Check ssh agent is running
+```bash
 eval "$(ssh-agent -s)"
+```
 
-# Pre OSX Monterey 12.0
+Pre OSX Monterey 12.0
+```bash
 ssh-add -K ~/.ssh/id_ed25519
+```
 
-# Post OSX Monterey 12.0
+Post OSX Monterey 12.0
+```bash
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
 
-# Ubuntu & Windows
+Ubuntu & Windows
+```bash
 ssh-add ~/.ssh/id_ed25519
 ```
 
