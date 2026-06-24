@@ -21,22 +21,29 @@
 
 Download and install [latest version of Git](https://git-scm.com/downloads)
 
+Copy git config & aliases
 ```bash
-# Copy git config & aliases
 cp ./HOME/.gitconfig ~/.gitconfig
+```
 
-# Set username and email
+Set username and email
+```bash
 git config --global user.name "YOUR NAME"
+```
+```bash
 git config --global user.email "your@email.com"
+```
 
-# Verify username and email are set 
+Verify username and email are set 
+```bash
 git config --global user.name
+```
+```bash
 git config --global user.email
 ```
 
-On Windows only, you should set [`#core.autocrlf`](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) to `true` (on Mac & Linux this is should stay configured as `input`)
+On Windows only, you should set [`#core.autocrlf`](https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) to `true` (on Mac & Linux this is should stay configured as `input`) to handle CRLF conversion correctly.
 ```bash
-# Windows ONLY - handle CRLF conversion correctly
 git config --global core.autocrlf true
 ```
 
@@ -85,9 +92,12 @@ If you haven't uploaded your SSH key to GitHub during the auth/login process, ma
 gh ssh-key add ~/.ssh/id_ed25519.pub --title "your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION"
 ```
 
+```bash
+your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION
+```
+
 ## Test SSH to GitHub
 ```bash
-# Test ssh is working
 ssh -T git@github.com
 ```
 
@@ -191,14 +201,18 @@ To test that git signing works, add a git commit and push it to GitHub. You shou
 
 [Configure Git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key#telling-git-about-your-ssh-key) to use the SSH key from previous step to sign git commits
 
+Set signing format to ssh
 ```bash
-# Set signing format to ssh
 git config --global gpg.format ssh
+```
 
-# Copy SSH public key (alternatively, open in editor and copy content of the file manually)
+Copy SSH public key (alternatively, open in editor and copy content of the file manually)
+```bash
 pbcopy < ~/.ssh/id_ed25519.pub
+```
 
-# Set git signing key - enclose in single quotes and include all spaces
+Set git signing key - enclose in single quotes and include all spaces
+```bash
 git config --global user.signingkey 'COPIED_FROM_CLIPBOARD'
 ```
 
@@ -210,6 +224,9 @@ In order for GitHub to be able to verify commits, you need to [add SSH public ke
 
 Add the SSH public key to [GitHub SSH signing keys](https://github.com/settings/ssh/new) via GitHub website (this is currently unavailable via `gh` CLI): 
 
-- Use title `your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION (SIGNING KEY)` and 
+- Use title
+  ```
+  your@email.com ED25519 Device YYYY-MM-DD OPT_DESCRIPTION (SIGNING KEY)
+  ``` 
 - ⚠ Key type **MUST BE SET TO** `Signing Key` ⚠
 
