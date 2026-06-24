@@ -9,17 +9,24 @@
 # SSH
 
 ## Configure SSH
+
+Create .ssh folder if it doesn't already exist
 ```bash
-# Create .ssh folder if it doesn't already exist
 mkdir -p ~/.ssh
+```
 
-# Backup existing ssh config file if it exists, just in case
+Backup existing ssh config file if it exists, just in case
+```bash
 mv ~/.ssh/config ~/.ssh/config.bak
+```
 
-# Copy ssh config
+Copy ssh config
+```bash
 cp ./HOME/.ssh/config ~/.ssh/config
+```
 
-# Restrict access / set permissions (Mac & Linux only; for Windows, see below)
+Restrict access / set permissions (Mac & Linux only; for Windows, see below)
+```bash
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
 ```
