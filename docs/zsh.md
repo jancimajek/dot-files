@@ -12,17 +12,23 @@
 
 Install [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) and make it default shell
 
+Install / update on Ubuntu
 ```bash
-# Install / update on Ubuntu
 sudo apt install zsh
+```
 
-# Check that zsh is installed
+Check that zsh is installed
+```bash
 zsh --version
+```
 
-# Check what is the current default shell
+Check what is the current default shell
+```bash
 echo $SHELL
+```
 
-# Make zsh default shell
+Make zsh default shell
+```bash
 chsh -s $(which zsh)
 ```
 
@@ -32,30 +38,40 @@ Reload / open new terminal or log off and back on. Verify the shell is zsh: `ech
 # oh-my-zsh
 Install [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh/wiki)
 
+cURL
 ```bash
-# curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-# wget (alternative)
+wget (alternative)
+```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-# Update
+Update
+```bash
 omz update
 ```
 
 Copy or link [`HOME/.zshrc`](../HOME/.zshrc) to `~/.zshrc`
 
+Backup current zshrc, just in case
 ```bash
-# Backup current zshrc, just in case
 mv ~/.zshrc ~/.zshrc.bak
+```
 
-# Copy
+Copy config
+```bash
 cp ./HOME/.zshrc ~/.zshrc
+```
 
-# Or link
+Or link
+```bash
 ln -s "$(pwd)/HOME/.zshrc" ~/.zshrc
+```
 
-# Reload zsh
+Reload zsh
+```bash
 exec zsh
 ```
 
@@ -90,11 +106,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 Reload zsh/omz after installing plugins for changes to take effect:
 
+Reload zsh/omz
 ```bash
-# Reload zsh/omz
 omz reload
+```
 
-# Or
+Or
+```bash
 exec zsh
 ```
 
@@ -109,26 +127,34 @@ exec zsh
 
 > *For configuring Starship for Windows Powershell, see [Windows guide](./windows.md#starship-🚀)*
 
+Install Starship
 ```bash
-# Install Starship
 curl -sS https://starship.rs/install.sh | sh
 ```
 
 Copy or link [`HOME/.config/starship.toml`](../HOME/.config/starship.toml) to `~/.config/starship.toml`
 
+Create .config dir if it doesn't exist
 ```bash
-# Create .config dir if it doesn't exist
 mkdir -p ~/.config
+```
 
-# Backup current Starship config, just in case
+Backup current Starship config, just in case
+```bash
 mv ~/.config/starship.toml ~/.config/starship.toml.bak
+```
 
-# Copy Starship config
+Copy Starship config
+```bash
 cp ./HOME/.config/starship.toml ~/.config/starship.toml
+```
 
-# Or link it
+Or link it
+```bash
 ln -s "$(pwd)/HOME/.config/starship.toml" ~/.config/starship.toml
+```
 
-# Reload zsh
+Reload zsh
+```bash
 exec zsh
 ```
